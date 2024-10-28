@@ -1,0 +1,1105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins;
+}
+
+header {
+    width: 100%;
+    background: #ffffffce;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    /* Set the height of the navbar */
+
+}
+
+.section {
+    padding-top: 100px;
+    /* Add padding equal to the navbar height (60px) plus some extra spacing */
+    height: calc(100vh - 100px);
+    /* Adjust section height to maintain full viewport visibility */
+}
+
+
+nav {
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Poppins;
+}
+
+.logo {
+    width: auto;
+    margin-left: 30px;
+}
+
+
+.logo img {
+
+    width: 90px;
+    height: 40px;
+}
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav-links li {
+
+
+    font-family: Poppins;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Poppins;
+    padding: 30px;
+}
+
+.nav-links a:hover {
+    color: rgb(84, 150, 238);
+}
+
+#con {
+    color: rgb(93, 146, 216);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(93, 146, 216);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: Poppins;
+    
+    margin-right: 40px; /* Pushes the #con link to the right */
+    /* width: auto; */
+    text-decoration: none;
+    
+}
+
+
+#con:hover {
+    background-color: rgb(93, 146, 216);
+    color: white;
+}
+
+.menu-toggle {
+    display: none;  /* Hidden by default on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;  /* Added this */
+    top: 10px;
+    right: 20px;  /* Changed from -40px to position inside navbar */
+    z-index: 100;  /* Ensures it stays above other elements */
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #000;
+    margin: 4px 0;
+    margin-right: 30px;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        position: static;
+        transform: none;
+        display: none;
+        width: 100%;
+    }
+
+     
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0; /* Increase the space between items */
+        text-align: center; /* Center align the text */
+    }
+    
+    .menu-toggle {
+        display: flex;  /* Show on small screens */
+    }
+    #con {
+        margin-right: 0;
+    }
+}
+
+
+/* Slider container styling */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    font-family:Poppins;
+    
+    
+}
+
+/* Text on top of the slider */
+.slider-text {
+    background-color:rgba(255, 255, 255, 0.747);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    
+    font-family:Poppins;
+    border-radius: 2px;
+    
+}
+.slider-text h1{
+    font-size: 1.5rem;
+}
+
+/* Slider controls styling */
+.slider-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px; /* Spacing between buttons */
+    font-family:Poppins;
+}
+
+/* Modern slider button styling */
+
+
+.slider-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    /* border-radius: 50%; */
+    width: 8px;  /* Smaller width */
+    height: 8px; /* Smaller height */
+    font-size: 0;
+    /* cursor: pointer; */
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+}
+
+/* Hover effect for slider button */
+.slider-button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/* Active button styling */
+.slider-button.active {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    transform: scale(1.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.two-part-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    align-items: center; /* Ensure both parts are aligned to the center */
+}
+
+.left-part {
+    width: 40%;
+}
+
+.right-part {
+    width: 55%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* Vertically center the image slider */
+}
+
+
+/* Accordion Titles and Content */
+/* Accordion Titles and Content with Arrow */
+.accordion-title {
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-bottom: 5px;
+    /* border: 1px solid #ddd; */
+    display: flex;
+    justify-content: space-between; /* Adjust to space between title and arrow */
+    align-items: center;
+    font-family:Poppins;
+    font-weight: bolder;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+    width: 10px;
+  height: 10px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  transform: rotate(45deg);
+}
+
+/* Rotating arrow when accordion is open */
+.arrow.rotate {
+    transform: rotate(180deg); /* Rotate arrow upside down */
+}
+
+/* Accordion content */
+.accordion-content {
+    max-height: 0; /* Start with height 0 for hidden content */
+    overflow: hidden; /* Prevent overflow */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Animate height and padding */
+    padding: 0 10px; /* Add some padding for content */
+    margin-bottom: 10px; /* Space between accordion items */
+    /* border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; */
+    background: transparent; /* Set background to transparent */
+}
+.accordion-content p{
+    font-size:18px;
+    font-family:Poppins;
+    font-weight: bolder;
+}
+/* When the content is visible */
+.accordion-content.show {
+    max-height: 200px; /* Set a maximum height (adjust as needed) */
+    padding: 10px; /* Add padding when shown */
+}
+
+
+.image-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px; /* Adjust the maximum width to maintain a good layout */
+    height: auto; /* Let the height adapt based on the image's aspect ratio */
+    overflow: hidden;
+}
+
+.image-slider img {
+    width: 100%;
+    height: auto; /* Allow the image to scale naturally */
+    object-fit: cover;
+    padding: 0;
+}
+
+/* Slider Controls (Vertical) */
+.slider-controls-vertical {
+    display: flex;
+    flex-direction: row; /* Change to row to align buttons horizontally */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0; /* Stretch across the full width */
+    bottom: 0; /* Position at the bottom */
+    padding: 10px;
+    gap: 10px; /* Space between buttons */
+    z-index: 10; /* Ensure the buttons are above the image */
+}
+
+.slider-button {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+.slider-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* To make sure accordion section and slider are aligned properly */
+.two-part-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.left-part {
+    width: 40%;
+}
+
+.right-part {
+    width: 55%;
+    position: relative;
+}
+
+/* Slider Button Active State */
+.slider-button.active {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000; /* Change text color for visibility */
+    transform: scale(1.2); /* Scale up the active button */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
+}
+.custom-project {
+    background-image: url('./images/Se3.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.custom-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.custom-project .content {
+    position: relative;
+    z-index: 1;
+}
+
+.custom-project h1 {
+    font-size: 3rem;
+}
+
+.custom-project p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.custom-project button {
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.custom-project button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Section 2: Catalog Download */
+.catalog-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+}
+ 
+
+.image-content img{
+    width:100%
+    
+}
+.catalog-section .text-content {
+    max-width: 50%;
+}
+
+.catalog-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.catalog-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.catalog-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 1px solid rgb(93, 146, 216);
+    color: rgb(93, 146, 216);
+    
+    cursor: pointer;
+}
+
+.catalog-section button:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+.catalog-section .image-content img {
+    max-width: 400px;
+    /* border: 2px solid #ddd;
+    border-radius: 8px; */
+}
+
+.slider-sectionn {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.section-titlee {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2.5rem;
+    color: #333; /* Adjust color as needed */
+    text-shadow: none;
+}
+
+#slider-imagee {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 80vh; /* Adjust this value as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+.slider-dotss {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.slider-dott {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgb(161, 157, 157);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slider-dott.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+.slider-sectionns {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.section-titlees {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2.5rem;
+    color: #333; /* Adjust color as needed */
+    text-shadow: none;
+}
+
+#slider-imagees {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 80vh; /* Adjust this value as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+.slider-dotsss {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.slider-dotts {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgb(161, 157, 157);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slider-dotts.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+.contact-us {
+    padding: 50px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    width: 45%;
+    text-align: left;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-info i {
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 20px;
+    font-size: 2rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.map-container {
+    width: 45%;
+    height: 400px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+.contact-section {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+    background-color: #f5f5f5;
+}
+
+.contact-container {
+    flex: 1;
+    padding: 5% 8%;
+}
+
+.contact-heading {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #333;
+    font-family:Poppins;
+    
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.icon-wrapper {
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon {
+    width: 100%;
+    height: 100%;
+    color: #666;
+}
+
+.contact-text {
+    color: #666;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.6;
+}
+
+.work-hours {
+    display: block;
+    margin-top: 0.25rem;
+    color: #666;
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
+.map-container {
+    flex: 1;
+    position: relative;
+    min-height: 100%;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.nav-links #con {
+    display: inline-block;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-container {
+        padding: 4% 6%;
+    }
+    .map-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        padding: 3rem 1.5rem;
+    }
+    
+    .map-container {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-heading {
+        margin-bottom: 2rem;
+    }
+    
+    .contact-list {
+        gap: 1.5rem;
+    }
+    
+    .map-container {
+        min-height: 300px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .slider-text h1 {
+        font-size: 1.3rem;
+        padding: 20px;
+    }
+
+    .two-part-section {
+        padding: 50px 30px;
+    }
+
+    .accordion-title {
+        font-size: 1.3rem;
+    }
+
+    .accordion-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .two-part-section {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .left-part, .right-part {
+        width: 100%;
+    }
+
+    .custom-project h1 {
+        font-size: 2.5rem;
+    }
+
+    .catalog-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .catalog-section .text-content {
+        max-width: 100%;
+    }
+
+    .image-content img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-text {
+        width: 90%;
+        top: 60%;
+    }
+
+    .slider-text h1 {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+
+    .custom-project h1 {
+        font-size: 2rem;
+    }
+
+    .custom-project p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .section-titlee,
+    .section-titlees {
+        font-size: 2rem;
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-container,
+    .map-container {
+        width: 100%;
+    }
+
+    .contact-heading {
+        font-size: 1.8rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        margin-left: 10px;
+    }
+
+    .logo img {
+        width: 70px;
+        height: 30px;
+    }
+
+    #con {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        display: inline-block;
+    }
+
+    .slider-text {
+        width: 95%;
+    }
+
+    .slider-text h1 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .accordion-title {
+        font-size: 1.1rem;
+    }
+
+    .accordion-content p {
+        font-size: 14px;
+    }
+
+    .custom-project h1 {
+        font-size: 1.5rem;
+    }
+
+    .catalog-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .catalog-section p {
+        font-size: 1rem;
+    }
+
+    .contact-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Navigation Menu Animation */
+@media (max-width: 992px) {
+    .nav-links {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .menu-toggle span {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+   
+}
+
+/* Slider Controls Responsive */
+@media (max-width: 576px) {
+    .slider-controls,
+    .slider-dots,
+    .slider-dotsss {
+        gap: 10px;
+    }
+
+    .slider-dott,
+    .slider-dotts {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Image Slider Responsive */
+@media (max-width: 992px) {
+    .image-slider {
+        max-width: 100%;
+    }
+}
+
+/* Contact Section Responsive Spacing */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 30px 20px;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    .contact-item {
+        margin-bottom: 20px;
+    }
+
+}
+.contact-button-mobile {
+    display: none;
+}
+
+@media (min-width: 993px) {
+    .contact-itemm {
+        display: none; /* Hide in regular nav on desktop */
+    }
+
+    .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    /* Show contact button after nav on desktop */
+    .nav-links + #con {
+        display: inline-block;
+        margin-right: 40px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 992px) {
+    .contact-item {
+        display: flex; /* Show in mobile menu */
+    }
+
+    /* Hide the standalone contact button */
+    .nav-links + #con {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+        display: none;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Style specifically for contact button in mobile menu */
+    .contact-itemm #con {
+        display: inline-block;
+        margin: 10px 0;
+    }
+}
+
+/* Rest of your existing menu toggle animation and other styles */
+@media (max-width: 992px) {
+    .menu-toggle span {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+/* General styles for the footer */
+footer {
+    background-color: #000; /* Black background */
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    color: #fff; /* White text */
+    font-size: 14px;
+    font-weight: bolder;
+    margin: 0;
+  }
+  
+  /* Make footer responsive */
+  @media only screen and (max-width: 768px) {
+    footer {
+      padding: 10px 0;
+    }
+  
+    footer p {
+      font-size: 12px; /* Slightly smaller font size for smaller screens */
+    }
+  }
+  
