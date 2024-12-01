@@ -8,7 +8,7 @@ Welcome to **Furni**, a website showcasing high-quality office furniture, privat
 - [Live Demo](#live-demo)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [License](#license)
+- [License](#license) 
 
 ---
 
